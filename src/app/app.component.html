@@ -1,0 +1,51 @@
+<div class="bounds">
+  <div class="content" fxLayout="row wrap" fxFlexFill >
+    <div [fxFlex]="100" [fxFlex.gt-xs]="50" [fxFlex.gt-sm]="null" [fxFlex.gt-md]="null" class="sec1 section">
+      [fxFlex]="100" [fxFlex.gt-xs]="50" [fxFlex.gt-sm]="null" [fxFlex.gt-md]="null"<br>
+      works correctly despite nulls because tags ordered from lowest to highest priority
+    </div>
+
+    <div [fxFlex.gt-sm]="null" [fxFlex.gt-xs]="50" [fxFlex]="100" class="sec2 section">
+      [fxFlex.gt-sm]="null"<br>
+      [fxFlex.gt-xs]="50"<br>
+      [fxFlex]="100"<br>
+      all tags use brackets,<br>
+      no flex-layout applied<br>
+      if >xs when opened<br>
+      (600px+)
+    </div>
+
+    <div [fxFlex.gt-sm]="25" [fxFlex.gt-xs]="50" [fxFlex]="100" class="sec3 section">
+      [fxFlex.gt-sm]="25" [fxFlex.gt-xs]="50" [fxFlex]="100"<br>
+      works correctly, all brackets, no nulls
+    </div>
+
+    <div [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" fxFlex.gt-xs="50" fxFlex="100" class="sec4 section">
+      [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" fxFlex.gt-xs="50" fxFlex="100"<br>
+      falls back on highest priority non-bracket value (gt-xs)
+    </div>
+
+    <div [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" [fxFlex.gt-xs]="50" fxFlex="100" class="sec5 section">
+      [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" [fxFlex.gt-xs]="50" fxFlex="100"<br>
+      falls back on highest priority non-bracket value (base)
+    </div>
+
+    <div [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" fxFlex="100" fxFlex.gt-xs="50" class="sec6 section">
+      [fxFlex.gt-md]="null" [fxFlex.gt-sm]="25" fxFlex="100" fxFlex.gt-xs="50"<br>
+      third, falls back on highest priority non-bracket value, (gt-xs, reverse order)
+    </div>
+
+    <div [fxFlex.gt-lg]="25" [fxFlex.gt-sm]="null" [fxFlex.gt-xs]="50" [fxFlex]="100" class="sec7 section">
+      [fxFlex.gt-lg]="25"<br>
+      [fxFlex.gt-sm]="null"<br>
+      [fxFlex.gt-xs]="50"<br>
+      [fxFlex]="100"<br>
+      no layout applied<br>
+      if md/lg width when opened<br>
+      (960px-1919px)
+    </div>
+  </div>
+
+  <media-query-status></media-query-status>
+
+</div>
