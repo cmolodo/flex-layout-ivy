@@ -17,7 +17,7 @@ import {Observable} from 'rxjs';
       </ul>
     </div>
   `,
-  styleUrls: ['./media-query-status.component.scss'],
+  styleUrls: ['./media-query-status.component.css'],
 })
 export class MediaQueryStatusComponent {
   media$: Observable<MediaChange[]>;
